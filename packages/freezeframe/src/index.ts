@@ -127,9 +127,10 @@ class Freezeframe {
       const { width, height } = $image.getClientRects()[0];
       const clientWidth = Math.ceil(width);
       const clientHeight = Math.ceil(height);
+      const scale = devicePixelRatio;
 
-      $canvas.style.width =  `${width}px`;
-      $canvas.style.height = `${height}px`;
+      $canvas.style.width = `${width * scale}px`;
+      $canvas.style.height = `${height * scale}px`;
       $canvas.setAttribute('width', clientWidth.toString());
       $canvas.setAttribute('height', clientHeight.toString());
 
